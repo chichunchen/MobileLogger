@@ -117,7 +117,7 @@ public class MainActivity extends Activity {
 			
 			gpsInfo.getLocationInfo(count, dateTime);
 			// cellInfo.getCellInfo(count, dateTime);
-			// wifiInfo.getWifiInfo(count, dateTime);
+			wifiInfo.getWifiInfo(count, dateTime);
 			sensorInfo.getSensorInfo(count, dateTime);
 			
 			mobilInfo.setText("正在收集行動資料\nLat: "+gpsInfo.lat+"" +
