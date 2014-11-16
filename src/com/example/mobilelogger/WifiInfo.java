@@ -17,8 +17,9 @@ public class WifiInfo {
 	public WifiInfo(WifiManager wifiManager, ReadWriteFile readWriteFile){
 		this.wifiManager = wifiManager;
 		this.readWriteFile = readWriteFile;
-		
-		String content = "Index\tDateTime\tBSSID\tSSID\tRSSI\n";
+	
+		// Lid = locationId, but the length is too long
+		String content = "LID\tIndex\tDateTime\tBSSID\tSSID\tRSSI\n";
 		this.readWriteFile.writeFile(content);
 	}
 	
@@ -37,7 +38,7 @@ public class WifiInfo {
 			final int size = scanReslutList.size();
 			for(int i=0; i < size; i++){
 				ScanResult result = scanReslutList.get(i);
-				String content = count+"\t"+dateTime+"\t"+result.BSSID+"\t"+result.SSID+"\t"+result.level+"\n";
+				String content = readWriteFile.locationId + "\t" + count+"\t"+dateTime+"\t"+result.BSSID+"\t"+result.SSID+"\t"+result.level+"\n";
 				this.readWriteFile.writeFile(content);
 			}
 		}

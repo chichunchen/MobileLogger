@@ -9,8 +9,10 @@ import java.io.OutputStreamWriter;
 
 public class ReadWriteFile {
 	File file;
+	String locationId = "1";
 	
-	public ReadWriteFile(String filePath, String fileName){
+	public ReadWriteFile(String filePath, String fileName, String locationId){
+		this.locationId = locationId;
 		try {
 			File path=new File("/sdcard/"+filePath);
 			if (!path.exists()) {

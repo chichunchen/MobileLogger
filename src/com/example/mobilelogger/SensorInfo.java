@@ -15,7 +15,7 @@ public class SensorInfo implements SensorEventListener {
 		this.sensorManager = sensorManager;
 		this.readWriteFile = readWriteFile;
 		
-		String content = "Index\tDateTime\tX\tY\tZ\n";
+		String content = "LocationID\tIndex\tDateTime\tX\tY\tZ\n";
 		this.readWriteFile.writeFile(content);
 		
 		@SuppressWarnings("deprecation")
@@ -24,7 +24,7 @@ public class SensorInfo implements SensorEventListener {
 	}
 	
 	public void getSensorInfo(int count, String dateTime){
-		String content = count+"\t"+dateTime+"\t"+x+"\t"+y+"\t"+z+"\n";
+		String content = readWriteFile.locationId+"\t"+count+"\t"+dateTime+"\t"+x+"\t"+y+"\t"+z+"\n";
 		this.readWriteFile.writeFile(content);
 	}
 	

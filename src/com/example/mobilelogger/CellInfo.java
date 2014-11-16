@@ -21,7 +21,7 @@ public class CellInfo {
 		this.telephonyManager = telephonyManager;
 		this.readWriteFile = readWriteFile;
 		
-		String content = "Index\tDateTime\tLAC\tCellID\tRSSI\n";
+		String content = "LocationID\tIndex\tDateTime\tLAC\tCellID\tRSSI\n";
 		this.readWriteFile.writeFile(content);
 		
 		try{
@@ -51,7 +51,7 @@ public class CellInfo {
 		String cid = String.valueOf(cellLocation.getCid());
 		String lac = String.valueOf(cellLocation.getLac());
 		
-		String content = count+"\t"+dateTime+"\t"+lac+"\t"+cid+"\t"+0+"\n";
+		String content = readWriteFile.locationId+"\t"+count+"\t"+dateTime+"\t"+lac+"\t"+cid+"\t"+0+"\n";
 		readWriteFile.writeFile(content);
 	}
 	
@@ -66,7 +66,7 @@ public class CellInfo {
 				dBm = String.valueOf(-113 + 2 * rssi);
 			}
 			
-			String content = count+"\t"+dateTime+"\t"+NeighboringList.get(i).getLac()+"\t"+NeighboringList.get(i).getCid()+"\t"+dBm+"\n";
+			String content = readWriteFile.locationId+"\t"+count+"\t"+dateTime+"\t"+NeighboringList.get(i).getLac()+"\t"+NeighboringList.get(i).getCid()+"\t"+dBm+"\n";
 			readWriteFile.writeFile(content);
 		}
 	}

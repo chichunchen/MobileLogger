@@ -3,6 +3,15 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
+    <EditText
+        android:id="@+id/locationId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:text="1" />
+    
     <TextView
         android:id="@+id/mobilInfo"
         android:layout_width="fill_parent"
@@ -20,5 +29,5 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Stop" />
-
+    
 </LinearLayout>

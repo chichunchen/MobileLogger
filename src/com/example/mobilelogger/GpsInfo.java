@@ -16,7 +16,7 @@ public class GpsInfo implements LocationListener {
 		this.locationManager = locationManager;
 		this.readWriteFile = readWriteFile;
 		
-		String content = "Index\tDateTime\tLat\tLon\tSpeed\n";
+		String content = "LocationID\tIndex\tDateTime\tLat\tLon\tSpeed\n";
 		this.readWriteFile.writeFile(content);
 		
 		try{
@@ -38,8 +38,9 @@ public class GpsInfo implements LocationListener {
 		}
 	}
 	
+	
 	public void getLocationInfo(int count, String dateTime){
-		String content = count+"\t"+dateTime+"\t"+lat+"\t"+lon+"\t"+speed+"\n";
+		String content = readWriteFile.locationId+"\t"+count+"\t"+dateTime+"\t"+lat+"\t"+lon+"\t"+speed+"\n";
 		this.readWriteFile.writeFile(content);
 	}
 	

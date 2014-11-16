@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -24,6 +25,7 @@ public class MainActivity extends Activity {
 	
 	private TextView mobilInfo;
 	private Button startButton, stopButton;
+	private EditText locationId;
 	
 	private int count = 0;
 	private long sleepCycleTime = 1000;
@@ -47,6 +49,7 @@ public class MainActivity extends Activity {
 	}
 	
 	private void initUI(){
+		locationId = (EditText) findViewById(R.id.locationId);
 		mobilInfo = (TextView) findViewById(R.id.mobilInfo);
 		startButton = (Button) findViewById(R.id.startButton);
 		stopButton = (Button) findViewById(R.id.stopButton);
@@ -71,6 +74,7 @@ public class MainActivity extends Activity {
 		WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 		SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 		
+
 		gpsInfo = new GpsInfo(locationManager, gpsInfoFile);
 		// cellInfo = new CellInfo(telephonyManager, cellInfoFile);
 		wifiInfo = new WifiInfo(wifiManager, wifiInfoFile);
@@ -79,10 +83,10 @@ public class MainActivity extends Activity {
 	
 	private void startMainProgram(){
 		String fileName = getDateTime();
-		gpsInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "gpsInfo");
-		// cellInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "cellInfo");
-		wifiInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "wifiInfo");
-		sensorInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "sensorInfo");
+		gpsInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "gpsInfo", locationId.getText().toString());
+		// cellInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "cellInfo", locationId.getText().toString());
+		wifiInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "wifiInfo", locationId.getText().toString());
+		sensorInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "sensorInfo", locationId.getText().toString());
 		
 		initManager();
 		
