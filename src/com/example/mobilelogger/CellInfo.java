@@ -21,7 +21,7 @@ public class CellInfo {
 		this.telephonyManager = telephonyManager;
 		this.readWriteFile = readWriteFile;
 		
-		String content = "LocationID\tIndex\tDateTime\tLAC\tCellID\tRSSI\n";
+		String content = "LID\tIndex\tDateTime\tLAC\tCellID\tRSSI\n";
 		this.readWriteFile.writeFile(content);
 		
 		try{

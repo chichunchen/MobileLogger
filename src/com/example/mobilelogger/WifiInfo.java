@@ -11,7 +11,7 @@ public class WifiInfo {
 	
 	public List<ScanResult> scanReslutList;
 	
-	private int count;
+	private int count;				// Calculate the index of wifi info data 
 	private String dateTime;
 	
 	public WifiInfo(WifiManager wifiManager, ReadWriteFile readWriteFile){
@@ -38,7 +38,16 @@ public class WifiInfo {
 			final int size = scanReslutList.size();
 			for(int i=0; i < size; i++){
 				ScanResult result = scanReslutList.get(i);
-				String content = readWriteFile.locationId + "\t" + count+"\t"+dateTime+"\t"+result.BSSID+"\t"+result.SSID+"\t"+result.level+"\n";
+				
+				// result level returns the received signal strength of 802.11 network
+				String content = readWriteFile.locationId+"\t"
+									+count+"\t"
+									+dateTime+"\t"
+									+result.BSSID+"\t"
+									+result.SSID+"\t"
+									// level returns the received signal strength of 802.11 network
+									+result.level+"\n";
+					
 				this.readWriteFile.writeFile(content);
 			}
 		}

@@ -9,6 +9,7 @@ import android.location.LocationManager;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -70,7 +71,7 @@ public class MainActivity extends Activity {
 	
 	private void initManager(){
 		LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		// TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+		TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 		SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 		
