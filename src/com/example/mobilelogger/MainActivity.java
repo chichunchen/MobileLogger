@@ -97,7 +97,7 @@ public class MainActivity extends Activity {
 	}
 	
 	private void stopMainProgram(){
-		mobilInfo.setText("已停止收集行動資料");
+		mobilInfo.setText(locationId.getText()+" 已停止收集行動資料");
 		
 		try{
 			loop = false;
@@ -125,8 +125,10 @@ public class MainActivity extends Activity {
 			wifiInfo.getWifiInfo(count, dateTime);
 			sensorInfo.getSensorInfo(count, dateTime);
 			
-			mobilInfo.setText("正在收集行動資料\nLat: "+gpsInfo.lat+"" +
-					", Lon: "+gpsInfo.lon+", Speed: "+gpsInfo.speed);
+			mobilInfo.setText("Location ID: " + locationId.getText()
+								+ "\n正在收集行動資料\n\n"
+								+ "Lat: " + gpsInfo.lat + "" 
+								+ ", Lon: " + gpsInfo.lon + ", Speed: " + gpsInfo.speed);
 		}
 	};
 	
