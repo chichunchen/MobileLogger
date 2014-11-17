@@ -17,13 +17,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+
 	private GpsInfo gpsInfo;
 	private CellInfo cellInfo;
 	private WifiInfo wifiInfo;
 	private SensorInfo sensorInfo;
-	
 	private ReadWriteFile gpsInfoFile, cellInfoFile, wifiInfoFile, sensorInfoFile;
-	
 	private TextView mobilInfo;
 	private Button startButton, stopButton;
 	private EditText locationId;
