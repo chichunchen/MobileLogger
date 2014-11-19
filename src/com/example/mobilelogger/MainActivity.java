@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
 		
 
 		gpsInfo = new GpsInfo(locationManager, gpsInfoFile);
-		// cellInfo = new CellInfo(telephonyManager, cellInfoFile);
+		cellInfo = new CellInfo(telephonyManager, cellInfoFile);
 		wifiInfo = new WifiInfo(wifiManager, wifiInfoFile);
 		sensorInfo = new SensorInfo(sensorManager, sensorInfoFile);
 	}
@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
 	private void startMainProgram(){
 		String fileName = getDateTime();
 		gpsInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "gpsInfo", locationId.getText().toString());
-		// cellInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "cellInfo", locationId.getText().toString());
+		cellInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "cellInfo", locationId.getText().toString());
 		wifiInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "wifiInfo", locationId.getText().toString());
 		sensorInfoFile = new ReadWriteFile("mobileInfo/"+fileName, "sensorInfo", locationId.getText().toString());
 		
