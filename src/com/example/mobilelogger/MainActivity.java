@@ -120,7 +120,7 @@ public class MainActivity extends Activity {
 			String dateTime = getDateTime();
 			
 			gpsInfo.getLocationInfo(count, dateTime);
-			// cellInfo.getCellInfo(count, dateTime);
+			cellInfo.getCellInfo(count, dateTime);
 			wifiInfo.getWifiInfo(count, dateTime);
 			sensorInfo.getSensorInfo(count, dateTime);
 			
